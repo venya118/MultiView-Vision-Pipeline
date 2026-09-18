@@ -5,7 +5,7 @@ A comprehensive end-to-end Computer Vision pipeline implementing traditional low
 
 
 # Description
-MultiView-Vision-Pipeline is a modular, open-source Computer Vision framework designed to process stereo image pairs and video sequences using classical algorithms. Without relying on heavy deep-learning dependencies, the project implements fundamental algorithms across the entire vision processing stack—from low-level image enhancement to 3D scene estimation, pattern classification, and motion tracking.
+MultiView Vision Pipeline is a modular, open source Computer Vision framework designed to process stereo image pairs and video sequences using classical algorithms. Without relying on heavy deep learning dependencies, the project implements fundamental algorithms across the entire vision processing stack from low level image enhancement to 3D scene estimation, pattern classification, and motion tracking.
 
 Core Stages:
 
@@ -13,13 +13,13 @@ Digital Image Processing & Enhancement: Converts input frames to grayscale, appl
 
 Feature Extraction & Multi-Camera Geometry: Uses SIFT keypoint detection, FLANN feature matching, and RANSAC filtering to compute the Fundamental Matrix and establish 3D epipolar geometry between stereo views.   
 
-Segmentation & Dimensionality Reduction: Groups image regions based on color similarity using $K$-Means clustering and compresses feature space via Principal Component Analysis (PCA).   
+Segmentation & Dimensionality Reduction: Groups image regions based on color similarity using K-Means clustering and compresses feature space via Principal Component Analysis (PCA).   
 
-Motion Analysis: Tracks spatio-temporal pixel displacements between consecutive frames using Farneback dense optical flow.   
+Motion Analysis: Tracks spatio temporal pixel displacements between consecutive frames using Farneback dense optical flow.   
 
 
 # Objective of the project
-The goal of MultiView-Vision-Pipeline is to build a modular classical computer vision system without relying on heavy deep-learning frameworks. It processes an input pair of stereo images and video frames through a 4-stage pipeline:
+The goal of MultiView Vision Pipeline is to build a modular classical computer vision system without relying on heavy deep learning frameworks. It processes an input pair of stereo images and video frames through a 4-stage pipeline:
 
 Preprocessing: Enhances contrast and removes noise using spatial filters.   
 
@@ -31,13 +31,13 @@ Motion Analysis: Tracks moving objects across frames using Farneback Optical Flo
 
 
 # Project Structure Overview
-Separation of Concerns (SoC): Distinct operational stages—such as low-level image processing, multi-camera geometry, pattern analysis, and motion tracking—are isolated in individual source files rather than merged into a single script.
+Separation of Concerns (SoC): Distinct operational stages such as low level image processing, multi camera geometry, pattern analysis, and motion tracking are isolated in individual source files rather than merged into a single script.
 
-Modularity and Reusability: Grouping functions by domain (e.g., part1_preprocess.py, part2_geometry.py) allows individual modules to be tested, debugged, or imported independently without executing the entire pipeline.   
+Modularity and Reusability: Grouping functions by domain allows individual modules to be tested, debugged, or imported independently without executing the entire pipeline.   
 
-Maintainability & Scalability: Separating data storage (data/), core algorithms (src/), and top-level execution scripts (main.py) prevents working directories from becoming cluttered as new vision algorithms or datasets are integrated.
+Maintainability & Scalability: Separating data storage, core algorithms, and top-level execution scripts prevents working directories from becoming cluttered as new vision algorithms or datasets are integrated.
 
-Reproducibility: Including environment definitions (requirements.txt) and unified documentation (README.md) ensures that the pipeline can be deployed, rebuilt, and executed consistently across different execution environments.
+Reproducibility: Including environment definitions and unified documentation (README.md) ensures that the pipeline can be deployed, rebuilt, and executed consistently across different execution environments.
 
 
 # Author
