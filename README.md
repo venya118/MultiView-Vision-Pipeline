@@ -6,7 +6,8 @@ A comprehensive end-to-end Computer Vision pipeline implementing traditional low
 # Objective of the project
 The goal of MultiView-Vision-Pipeline is to build a modular classical computer vision system without relying on heavy deep-learning frameworks. It processes an input pair of stereo images and video frames through a 4-stage pipeline:
 Preprocessing: Enhances contrast and removes noise using spatial filters.   
-Features & Geometry: Detects scale-invariant keypoints (SIFT) and estimates 3D depth geometry using Epipolar constraints (Fundamental Matrix/RANSAC).   Segmentation & Reduction: Clusters image regions via K-Means and simplifies descriptor dimensions using PCA.   
+Features & Geometry: Detects scale-invariant keypoints (SIFT) and estimates 3D depth geometry using Epipolar constraints (Fundamental Matrix/RANSAC).
+Segmentation & Reduction: Clusters image regions via K-Means and simplifies descriptor dimensions using PCA.   
 Motion Analysis: Tracks moving objects across frames using Farneback Optical Flow.   
 
 # Project Structure Overview
