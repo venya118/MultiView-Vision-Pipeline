@@ -31,13 +31,26 @@ Motion Analysis: Tracks moving objects across frames using Farneback Optical Flo
 
 
 # Project Structure Overview
-Separation of Concerns (SoC): Distinct operational stages such as low level image processing, multi camera geometry, pattern analysis, and motion tracking are isolated in individual source files rather than merged into a single script.
+Separation of Concerns (SoC): Distinct operational stages such as low level image processing, multi camera geometry, pattern analysis, and motion tracking are isolated in 
+source files rather than merged into a single script.
 
 Modularity and Reusability: Grouping functions by domain allows individual modules to be tested, debugged, or imported independently without executing the entire pipeline.   
 
 Maintainability & Scalability: Separating data storage, core algorithms, and top-level execution scripts prevents working directories from becoming cluttered as new vision algorithms or datasets are integrated.
 
 Reproducibility: Including environment definitions and unified documentation (README.md) ensures that the pipeline can be deployed, rebuilt, and executed consistently across different execution environments.
+
+
+# Tools & Technologies
+Python 3: Primary language used to implement the algorithms and pipeline architecture.
+
+OpenCV (cv2): Core computer vision library used for spatial preprocessing, SIFT feature extraction, FLANN feature matching, RANSAC estimation, and Farneback dense optical flow.
+
+NumPy: Used for matrix manipulation, fast multidimensional array operations, and vector computations across the geometry and optical flow modules.
+
+scikit-learn: Provides machine learning implementations for K-Means spatial color clustering and Principal Component Analysis (PCA) feature reduction. 
+
+Git & GitHub: Used for source code versioning, repository management, and hosting project documentation.
 
 
 # Author
