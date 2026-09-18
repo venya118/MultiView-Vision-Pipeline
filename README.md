@@ -23,7 +23,7 @@ The goal of MultiView Vision Pipeline is to build a modular classical computer v
 
 Preprocessing: Enhances contrast and removes noise using spatial filters.   
 
-Features & Geometry: Detects scale-invariant keypoints (SIFT) and estimates 3D depth geometry using Epipolar constraints.
+Features & Geometry: Detects scale invariant key points (SIFT) and estimates 3D depth geometry using Epipolar constraints.
 
 Segmentation & Reduction: Clusters image regions via K-Means and simplifies descriptor dimensions using PCA.   
 
