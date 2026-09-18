@@ -1,5 +1,18 @@
 # MultiView-Vision-Pipeline
 
+# Description
+MultiView-Vision-Pipeline is a modular, open-source Computer Vision framework designed to process stereo image pairs and video sequences using classical algorithms. Without relying on heavy deep-learning dependencies, the project implements fundamental algorithms across the entire vision processing stack—from low-level image enhancement to 3D scene estimation, pattern classification, and motion tracking.
+
+Core Stages:
+
+Digital Image Processing & Enhancement: Converts input frames to grayscale, applies Gaussian spatial filtering to reduce noise, and performs histogram equalization to optimize image contrast.  
+
+Feature Extraction & Multi-Camera Geometry: Uses SIFT keypoint detection, FLANN feature matching, and RANSAC filtering to compute the Fundamental Matrix and establish 3D epipolar geometry between stereo views.   
+
+Segmentation & Dimensionality Reduction: Groups image regions based on color similarity using $K$-Means clustering and compresses feature space via Principal Component Analysis (PCA).   
+
+Motion Analysis: Tracks spatio-temporal pixel displacements between consecutive frames using Farneback dense optical flow.   
+
 
 # Project Overview
 A comprehensive end-to-end Computer Vision pipeline implementing traditional low level processing, 3D spatial reconstruction via stereo or epipolar geometry, classical feature extraction, machine learning classification, and motion tracking.
