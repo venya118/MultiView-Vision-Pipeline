@@ -1,0 +1,30 @@
+import cv2
+from src.part1_preprocess import apply_preprocessing
+from src.part2_geometry import compute_stereo_geometry
+from src.part3_pattern import segment_and_compress
+from src.part4_motion import track_optical_flow
+
+def run_pipeline(left_img_path, right_img_path):
+    # Load input stereo pair
+    img_left = cv2.imread(left_img_path)
+    img_right = cv2.imread(right_img_path)
+
+    # Execute Part 1: Preprocessing
+    prep_left = apply_preprocessing(img_left)
+    prep_right = apply_preprocessing(img_right)
+
+    # Execute Part 2: Epipolar Geometry
+    F_matrix, pts_left, pts_right = compute_stereo_geometry(prep_left, prep_right)
+    print(f"Fundamental Matrix Calculated:\n{F_matrix}")
+
+    # Execute Part 3: Pattern & Segmentation
+    segmented, pca_feats = segment_and_compress(img_left, n_clusters=4)
+    cv2.imwrite("segmented_output.png", segmented)
+
+    # Execute Part 4: Motion Estimation
+    flow = track_optical_flow(img_left, img_right)
+    print("Optical Flow Computed successfully.")
+
+if __name__ == "__main__":
+    # Replace with path to actual images
+    run_pipeline("data/left.png", "data/right.png")
