@@ -1,0 +1,17 @@
+import cv2
+
+def apply_preprocessing(image):
+    """
+    Converts to grayscale, removes noise via Gaussian Blur, 
+    and equalizes the histogram to boost contrast.
+    """
+    # 1. Convert BGR image to Grayscale
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    
+    # 2. Gaussian Blur for spatial filtering / noise reduction
+    blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+    
+    # 3. Histogram Equalization for enhancement
+    enhanced = cv2.equalizeHist(blurred)
+    
+    return enhanced
